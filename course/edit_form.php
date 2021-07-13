@@ -192,6 +192,7 @@ class course_edit_form extends moodleform {
         if ($overviewfilesoptions = course_overviewfiles_options($course)) {
             $mform->addElement('filemanager', 'overviewfiles_filemanager', get_string('courseoverviewfiles'), null, $overviewfilesoptions);
             $mform->addHelpButton('overviewfiles_filemanager', 'courseoverviewfiles');
+            $mform->addRule('overviewfiles_filemanager', get_string('required'), 'required', null, 'client');
             $summaryfields .= ',overviewfiles_filemanager';
         }
 
